@@ -33,12 +33,12 @@ def main():
     # Groups the dataframe by Division to make bar charts based on the number of entries by Division
     div_count = subway_df.groupby('Division').agg('count').reset_index()
     print(div_count.head())
-    # plot_chart_one(div_count)
+    plot_chart_one(div_count)
 
     # Groups the dataframe by Line to make bar charts based on the number of entries by Line
     line_count = subway_df.groupby('Line').agg('count').reset_index()
     print(line_count.head())
-    # plot_chart_two(line_count)
+    plot_chart_two(line_count)
 
     # Extracts a series of counts for the line column and adds it to the dataframe to sort other variables by the number
     # of entries by line
@@ -49,11 +49,11 @@ def main():
     subway_df_update = subway_df_update.assign(line_count=line_count_series.values)
     print(subway_df_update.head())
 
-    # plot_scatter_one(subway_df_update)
-    # plot_scatter_two(subway_df_update)
-    # plot_street_map(subway_df_update)
-    # plot_street_map_two(subway_df_update)
-    # plot_street_map_three(subway_df_update)
+    plot_scatter_one(subway_df_update)
+    plot_scatter_two(subway_df_update)
+    plot_street_map(subway_df_update)
+    plot_street_map_two(subway_df_update)
+    plot_street_map_three(subway_df_update)
 
 
 '''
